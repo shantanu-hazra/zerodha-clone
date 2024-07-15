@@ -1,0 +1,18 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="card">
+    <header>
+      <h2><%= listings.title%></h2>
+    </header>
+    <img src="<%= listings.image %>" alt="Hotel image" class="images">
+    <div class="content">
+      <p> <%= listings.description %> </p>
+    </div>
+      <form action="/listings/<%= listings._id %>/edit" method="get">
+        <button type="submit">Update</button>
+      </form>
+      <form action="/listings/<%= listings._id %>/delete?_method=DELETE" method="get">
+        <button type="submit">Delete</button>
+      </form>
+  </div>
+</body>

@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <h1>Former Details</h1>
+  <div class="card">
+    <header>
+      <h2><%= listings.title%></h2>
+    </header>
+    <img src="<%= listings.image %>" alt="Hotel image" class="images">
+    <div class="content">
+      <p> <%= listings.description %> </p>
+    </div>
+  </div>
+  <form action="/listings?_method=PATCH" method="post">
+    <h1>please change the values you wish to change</h1>
+    <textarea name="title" placeholder="suggest an appropriate title"></textarea>
+    <textarea name="image" placeholder="suggest an appropriate image"></textarea>
+    <textarea name="price" placeholder="suggest an appropriate price"></textarea>
+    <textarea name="country" placeholder="suggest an appropriate content"></textarea> 
+    <textarea name="description" placeholder="suggest an appropriate description"></textarea>
+    <input type="hidden" name="id" value="<%= listings._id %>">
+    <button type="submit">save</button>
+  </form> 
+</body>
